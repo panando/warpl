@@ -1,8 +1,8 @@
-# Warpl — 从 Warp 官方版本到本地精简版完整操作流程
+# Warple — 从 Warp 官方版本到本地精简版完整操作流程
 
 ## 概述
 
-本文档记录了从 Warp 官方仓库构建本地精简版终端（Warpl）的完整流程，包括代码修改、编译、打包和分发。
+本文档记录了从 Warp 官方仓库构建本地精简版终端（Warple）的完整流程，包括代码修改、编译、打包和分发。
 
 **目标产物**: 一个无需账户登录、无云端服务依赖的本地终端应用。
 
@@ -200,7 +200,7 @@ pub enum SettingsSection {
 -     cfg_if! { ... }
 - }
 + } else {
-+     // Warpl: 未登录时直接进入终端，不显示登录弹窗
++     // Warple: 未登录时直接进入终端，不显示登录弹窗
 +     AuthOnboardingState::Terminal(workspace_args.create_workspace(ctx))
 + };
 ```
@@ -227,25 +227,25 @@ pub enum SettingsSection {
 ## 5. 打包为 macOS 应用
 
 ```bash
-bash script/package-warpl.sh
+bash script/package-warple.sh
 ```
 
 该脚本会：
-1. 将 `target/release/warp-oss` 复制到 `Warpl.app/Contents/MacOS/Warpl`
+1. 将 `target/release/warp-oss` 复制到 `Warple.app/Contents/MacOS/Warple`
 2. 从 `app/channels/oss/icon/` 生成 `.icns` 图标
-3. 生成 `Info.plist`（Bundle ID: `dev.warp.Warpl`）
+3. 生成 `Info.plist`（Bundle ID: `dev.warp.Warple`）
 4. 打包为 DMG 安装镜像
 
 **输出**:
-- `dist/Warpl.app` — macOS 应用（349MB）
-- `dist/Warpl.dmg` — DMG 安装镜像（136MB）
+- `dist/Warple.app` — macOS 应用（349MB）
+- `dist/Warple.dmg` — DMG 安装镜像（136MB）
 
 ---
 
 ## 6. 安装与使用
 
-1. 双击 `Warpl.dmg`
-2. 将 Warpl 拖入 Applications
+1. 双击 `Warple.dmg`
+2. 将 Warple 拖入 Applications
 3. 首次打开需右键 → 打开（绕过 Gatekeeper）
 
 **启动后体验**:
@@ -267,7 +267,7 @@ cargo build --release --bin warp-oss \
   --features "release_bundle,gui,local_tty,local_fs,shell_selector,ligatures,rect_selection,markdown_tables,settings_file"
 
 # 打包
-bash script/package-warpl.sh
+bash script/package-warple.sh
 ```
 
 ---

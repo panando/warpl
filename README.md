@@ -1,6 +1,6 @@
-# Warpl
+# Warple
 
-**Warpl** = **Warp** + **L**ocal terminal
+**Warple** = **Warp** **L**ocal **E**dition
 
 A minimal, offline-first build of [Warp](https://github.com/warpdotdev/warp) terminal — for users who want a clean terminal GUI without cloud services, AI features, or login prompts.
 
@@ -12,7 +12,7 @@ A minimal, offline-first build of [Warp](https://github.com/warpdotdev/warp) ter
 
 This project is derived from the [Warp open-source repository](https://github.com/warpdotdev/warp).
 
-**Warpl** is designed for users who:
+**Warple** is designed for users who:
 - Want to use Warp's terminal GUI purely locally
 - Prefer not to be interrupted by online features
 - Have no need for AI capabilities
@@ -40,7 +40,7 @@ This project is derived from the [Warp open-source repository](https://github.co
 
 ## Build
 
-See [WARPL_BUILD_GUIDE.md](WARPL_BUILD_GUIDE.md) for detailed instructions.
+See [WARPLE_BUILD_GUIDE.md](WARPLE_BUILD_GUIDE.md) for detailed instructions.
 
 ```bash
 # Build
@@ -49,7 +49,7 @@ cargo build --release --bin warp-oss \
   --features "release_bundle,gui,local_tty,local_fs,shell_selector,ligatures,rect_selection,markdown_tables,settings_file"
 
 # Package (macOS)
-bash script/package-warpl.sh
+bash script/package-warple.sh
 ```
 
 ## Contributing
@@ -64,5 +64,5 @@ This project inherits the licensing from the upstream Warp repository:
 
 ## Acknowledgments
 
-- [Warp](https://www.warp.dev) — The original terminal that Warpl is based on
+- [Warp](https://www.warp.dev) — The original terminal that Warple is based on
 - All the open-source dependencies that make this possible

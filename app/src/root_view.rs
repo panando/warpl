@@ -1664,7 +1664,7 @@ impl RootView {
         let auth_onboarding_state = if auth_state.is_logged_in() {
             AuthOnboardingState::Terminal(workspace_args.create_workspace(ctx))
         } else {
-            // Warpl: 未登录时直接进入终端，不显示登录弹窗
+            // Warple: 未登录时直接进入终端，不显示登录弹窗
             AuthOnboardingState::Terminal(workspace_args.create_workspace(ctx))
         };
 

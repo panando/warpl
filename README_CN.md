@@ -1,6 +1,6 @@
-# Warpl
+# Warple
 
-**Warpl** = **Warp** + **L**ocal terminal
+**Warple** = **Warp** **L**ocal **E**dition
 
 [Warp](https://github.com/warpdotdev/warp) 终端的精简本地版本 —— 为希望获得纯净终端 GUI、无需云服务、AI 功能或登录提示的用户打造。
 
@@ -12,7 +12,7 @@
 
 本项目来源于 [Warp 官方开源项目](https://github.com/warpdotdev/warp)。
 
-**Warpl** 面向以下用户：
+**Warple** 面向以下用户：
 - 希望完全本地使用 Warp 的终端窗口
 - 不希望被在线功能打扰
 - 不需要 AI 功能
@@ -40,7 +40,7 @@
 
 ## 编译
 
-详细说明请参阅 [WARPL_BUILD_GUIDE.md](WARPL_BUILD_GUIDE.md)。
+详细说明请参阅 [WARPLE_BUILD_GUIDE.md](WARPLE_BUILD_GUIDE.md)。
 
 ```bash
 # 编译
@@ -49,7 +49,7 @@ cargo build --release --bin warp-oss \
   --features "release_bundle,gui,local_tty,local_fs,shell_selector,ligatures,rect_selection,markdown_tables,settings_file"
 
 # 打包 (macOS)
-bash script/package-warpl.sh
+bash script/package-warple.sh
 ```
 
 ## 参与贡献
@@ -64,5 +64,5 @@ bash script/package-warpl.sh
 
 ## 致谢
 
-- [Warp](https://www.warp.dev) — Warpl 基于的原始终端项目
+- [Warp](https://www.warp.dev) — Warple 基于的原始终端项目
 - 所有让这一切成为可能的开源依赖项目

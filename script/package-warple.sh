@@ -2,14 +2,14 @@
 set -euo pipefail
 
 # ============================================================
-# Warpl 打包脚本 — 将 warp-oss 二进制打包为 macOS .app 并生成 .dmg
+# Warple 打包脚本 — 将 warp-oss 二进制打包为 macOS .app 并生成 .dmg
 # ============================================================
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-APP_NAME="Warpl"
-APP_BUNDLE_ID="dev.warp.Warpl"
+APP_NAME="Warple"
+APP_BUNDLE_ID="dev.warp.Warple"
 BINARY_NAME="warp-oss"
 ICON_SRC="${PROJECT_DIR}/app/channels/oss/icon/no-padding/512x512.png"
 STABLE_ICONS="${PROJECT_DIR}/app/channels/stable/icon/no-padding"
@@ -21,7 +21,7 @@ DMG_PATH="${DIST_DIR}/${APP_NAME}.dmg"
 BINARY_PATH="${PROJECT_DIR}/target/release/${BINARY_NAME}"
 
 echo "=========================================="
-echo "  Warpl 打包工具"
+echo "  Warple 打包工具"
 echo "=========================================="
 
 # ---- 1. 检查前置条件 ----
@@ -99,13 +99,13 @@ cat > "${APP_BUNDLE}/Contents/Info.plist" << 'PLIST'
     <key>CFBundleDevelopmentRegion</key>
     <string>en</string>
     <key>CFBundleExecutable</key>
-    <string>Warpl</string>
+    <string>Warple</string>
     <key>CFBundleIdentifier</key>
-    <string>dev.warp.Warpl</string>
+    <string>dev.warp.Warple</string>
     <key>CFBundleName</key>
-    <string>Warpl</string>
+    <string>Warple</string>
     <key>CFBundleDisplayName</key>
-    <string>Warpl</string>
+    <string>Warple</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
@@ -186,6 +186,6 @@ echo "  .dmg:  ${DMG_PATH} (${DMG_SIZE})"
 echo ""
 echo "  安装方式:"
 echo "    1. 双击 ${DMG_PATH} 打开"
-echo "    2. 将 Warpl 拖入 Applications 文件夹"
-echo "    3. 从启动台或 Applications 打开 Warpl"
+echo "    2. 将 Warple 拖入 Applications 文件夹"
+echo "    3. 从启动台或 Applications 打开 Warple"
 echo ""
