@@ -14,6 +14,15 @@ BINARY_NAME="warp-oss"
 ICON_SRC="${PROJECT_DIR}/app/channels/oss/icon/no-padding/512x512.png"
 STABLE_ICONS="${PROJECT_DIR}/app/channels/stable/icon/no-padding"
 
+# 版本号 (从 VERSION 文件读取)
+VERSION_FILE="${PROJECT_DIR}/VERSION"
+if [ ! -f "$VERSION_FILE" ]; then
+    echo "❌ 未找到 VERSION 文件: $VERSION_FILE"
+    exit 1
+fi
+APP_VERSION=$(cat "$VERSION_FILE" | tr -d '[:space:]')
+BUILD_NUMBER=$(echo "$APP_VERSION" | sed 's/\.//g')
+
 # 输出路径
 DIST_DIR="${PROJECT_DIR}/dist"
 APP_BUNDLE="${DIST_DIR}/${APP_NAME}.app"
@@ -21,7 +30,7 @@ DMG_PATH="${DIST_DIR}/${APP_NAME}.dmg"
 BINARY_PATH="${PROJECT_DIR}/target/release/${BINARY_NAME}"
 
 echo "=========================================="
-echo "  Warple 打包工具"
+echo "  Warple 打包工具 v${APP_VERSION}"
 echo "=========================================="
 
 # ---- 1. 检查前置条件 ----
@@ -91,7 +100,7 @@ fi
 
 # ---- 6. 创建 Info.plist ----
 echo "📝 生成 Info.plist..."
-cat > "${APP_BUNDLE}/Contents/Info.plist" << 'PLIST'
+cat > "${APP_BUNDLE}/Contents/Info.plist" << PLIST
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -109,9 +118,9 @@ cat > "${APP_BUNDLE}/Contents/Info.plist" << 'PLIST'
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
-    <string>1.0</string>
+    <string>${APP_VERSION}</string>
     <key>CFBundleVersion</key>
-    <string>100</string>
+    <string>${BUILD_NUMBER}</string>
     <key>CFBundleIconFile</key>
     <string>AppIcon</string>
     <key>CFBundleIconName</key>
