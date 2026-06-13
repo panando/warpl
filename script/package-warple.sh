@@ -26,7 +26,7 @@ BUILD_NUMBER=$(echo "$APP_VERSION" | sed 's/\.//g')
 # 输出路径
 DIST_DIR="${PROJECT_DIR}/dist"
 APP_BUNDLE="${DIST_DIR}/${APP_NAME}.app"
-DMG_PATH="${DIST_DIR}/${APP_NAME}.dmg"
+DMG_PATH="${DIST_DIR}/${APP_NAME}-${APP_VERSION}.dmg"
 BINARY_PATH="${PROJECT_DIR}/target/release/${BINARY_NAME}"
 
 echo "=========================================="
