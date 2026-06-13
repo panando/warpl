@@ -32,28 +32,18 @@ use crate::terminal::view::TerminalAction;
 use crate::BlocklistAIHistoryModel;
 
 pub(super) const CLOUD_MODE_V2_MAX_WIDTH: f32 = 720.;
-
 const CLOUD_MODE_V2_INPUT_RADIUS: f32 = 8.;
-
 const CLOUD_MODE_V2_TOP_ROW_GAP: f32 = 10.;
-
 const CLOUD_MODE_V2_INPUT_HORIZONTAL_PADDING: f32 = 16.;
-
 const CLOUD_MODE_V2_INPUT_TOP_PADDING: f32 = 16.;
-
 const CLOUD_MODE_V2_INPUT_EDITOR_BOTTOM_PADDING: f32 = 8.;
-
 const CLOUD_MODE_V2_INPUT_BOTTOM_PADDING: f32 = 16.;
-
 const CLOUD_MODE_V2_TOP_ROW_INNER_GAP: f32 = 4.;
-
 const CLOUD_MODE_V2_INPUT_MIN_EDITOR_HEIGHT: f32 = 80.;
-
 /// Horizontal gutter applied symmetrically on both sides of the V2 cloud-mode
 /// composing UI so the floating input has matching breathing room on the left
 /// and right at narrow widths.
 const CLOUD_MODE_V2_HORIZONTAL_GUTTER: f32 = 16.;
-
 // Top padding above the attachment chips row inside the V2 input container.
 const CLOUD_MODE_V2_CHIPS_ROW_TOP_PADDING: f32 = 4.;
 

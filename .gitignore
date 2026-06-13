@@ -71,3 +71,4 @@ __pycache__/
 .note/
 dist/
 SESSION_LOG.md
+RELEASE.md

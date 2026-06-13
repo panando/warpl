@@ -87,7 +87,7 @@ use warpui::elements::{
     ResizableStateHandle, SavePosition, SelectionHandle, Text, Wrap, XAxisAnchor, YAxisAnchor,
 };
 pub use warpui::elements::Empty;
-use warpui::elements::{ParentElement as _, Stack};
+use warpui::elements::Stack;
 pub use warpui::geometry::vector::{vec2f, Vector2F};
 use warpui::keymap::{BindingDescription, EditableBinding, FixedBinding, Keystroke};
 use warpui::platform::OperatingSystem;
